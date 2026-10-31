@@ -2,7 +2,7 @@
 
 [← Project overview](../README.md)
 
-Both sketches use the Arduino's built-in BLE radio. A separate phone application is not included; use a BLE client that can write text/ASCII to a characteristic.
+Use a BLE client to write text/ASCII commands to the Arduino's built-in BLE radio.
 
 ## Connection
 
@@ -14,7 +14,7 @@ Both sketches use the Arduino's built-in BLE radio. A separate phone application
 | Properties | Read, Write, Notify |
 | Maximum value length | 20 bytes |
 
-Connect, locate the service and characteristic, and write an ASCII command (for example `F`, not the two text characters `46`). Commands are case-insensitive. Enable notifications to see acknowledgements from the turning variant. Both sketches initially expose `Ready`.
+Connect to the characteristic and write an ASCII command such as `F`. Commands are case-insensitive. Enable notifications for acknowledgements from the turning variant. The initial value is `Ready`.
 
 ## Baseline sketch
 
@@ -29,7 +29,7 @@ Source: [`final_requirement_balance_robot.ino`](../firmware/final_requirement_ba
 | `S`, `X`, or `0` | Cancel the ramp sequence and hold current position and heading |
 | `P`, `M`, or `RAMP` | Start the preset ramp sequence |
 
-The travel target is 3820 encoder counts, approximately 50 cm with the configured wheel diameter and encoder resolution. Position targets ramp at 12 cm/s. These are targets rather than guarantees of actual displacement or heading.
+The travel target is 3820 encoder counts, approximately 50 cm. Position targets ramp at 12 cm/s.
 
 `RAMP` is recognized before the single-letter `R` command. The ramp sequence is:
 
@@ -38,7 +38,7 @@ The travel target is 3820 encoder counts, approximately 50 cm with the configure
 3. Once the target is reached within 230 counts (approximately 3 cm), hold for 30 seconds.
 4. Return to the saved start position.
 
-This is an encoder-position sequence. It does not detect a ramp or measure its slope. A travel or turning command cancels the ramp sequence. The baseline does not provide per-command acknowledgement strings, and BLE disconnection does not automatically cancel the active target.
+The sequence uses encoder position without slope detection. A travel or turning command cancels it. BLE disconnection leaves the baseline's active target unchanged.
 
 ## Turning variant
 
@@ -55,7 +55,7 @@ Source: [`TURNING.ino`](../firmware/TURNING/TURNING.ino).
 
 The parser uses only the first character of the written value. **Do not send `RAMP` to this variant: its first character is interpreted as a right-turn command.** There is no ramp-sequence command in this sketch.
 
-With the supplied constants, the left sequence requests 45° + 45°. The right sequence requests 46° + 48° as compensation for undershoot. These are internal setpoints, not independently measured physical angles. The inter-step pause is **2800 ms** and the final pause is **6000 ms**. Some opposite-direction commands during the protected final pause return `WaitPause`.
+The left sequence targets 45° + 45°. The right sequence targets 46° + 48° to compensate for undershoot. The inter-step pause is **2800 ms** and the final pause is **6000 ms**. Some opposite-direction commands during the final pause return `WaitPause`.
 
 On BLE disconnection, this variant cancels turn sequences and requests position/heading hold.
 
