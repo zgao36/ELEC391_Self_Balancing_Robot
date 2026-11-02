@@ -106,7 +106,7 @@ See [hardware and control](docs/HARDWARE_AND_CONTROL.md) for pin assignments, co
 | Peter Gao | [@zgao36](https://github.com/zgao36) |
 | Tony Zhao | [tonyzhao1312@gmail.com](mailto:tonyzhao1312@gmail.com) |
 | [Echo Zhou](https://github.com/Echo3516) | [zhou3516n@gmail.com](mailto:zhou3516n@gmail.com) |
-| Rita Chang | [ritachang0210@gmail.com](mailto:ritachang0210@gmail.com) |
+| [Rita Chang](https://github.com/Ritazlx) | [ritachang0210@gmail.com](mailto:ritachang0210@gmail.com) |
 
 ## Engineering lessons
 
