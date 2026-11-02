@@ -101,12 +101,12 @@ See [hardware and control](docs/HARDWARE_AND_CONTROL.md) for pin assignments, co
 
 ## Contributors
 
-| Team member |
-| :--- |
-| [Peter Gao](https://github.com/zgao36) |
-| Tony Zhao |
-| [Echo Zhou](https://github.com/Echo3516) |
-| Rita Chang |
+| Team member | Contact |
+| :--- | :--- |
+| Peter Gao | [@zgao36](https://github.com/zgao36) |
+| Tony Zhao | [tonyzhao1312@gmail.com](mailto:tonyzhao1312@gmail.com) |
+| [Echo Zhou](https://github.com/Echo3516) | [zhou3516n@gmail.com](mailto:zhou3516n@gmail.com) |
+| Rita Chang | [ritachang0210@gmail.com](mailto:ritachang0210@gmail.com) |
 
 ## Engineering lessons
 
