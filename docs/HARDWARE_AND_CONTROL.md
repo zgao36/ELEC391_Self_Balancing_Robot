@@ -2,6 +2,21 @@
 
 [← Project overview](../README.md)
 
+## System architecture
+
+<img src="assets/control-diagram.png" alt="Information-flow diagram from the final report, showing IMU and encoder feedback, cascaded control, motor drive, and BLE commands" width="760" />
+
+## Hardware
+
+| Component | Purpose |
+| :--- | :--- |
+| Arduino Nano 33 BLE Sense with BMI270 IMU | Control, inertial sensing, and built-in BLE |
+| Two DC gear motors with quadrature encoders | Actuation and wheel-position feedback |
+| Two DRV8871 motor drivers | Bidirectional PWM motor drive |
+| 12 V supply / battery pack | Robot power |
+| 8 cm wheels and two-level chassis | Two-wheel inverted-pendulum platform |
+| Encoder voltage dividers | Interface encoder signals to 3.3 V logic |
+
 ## Connections
 
 Pin assignments for both sketches:
