@@ -99,9 +99,14 @@ Open and upload **one sketch at a time**.
 
 See [hardware and control](docs/HARDWARE_AND_CONTROL.md) for pin assignments, control gains, and startup behavior.
 
-## Team
+## Contributors
 
-Peter Gao · Tony Zhao · Echo Zhou · Rita Chang
+| Team member |
+| :--- |
+| [Peter Gao](https://github.com/zgao36) |
+| Tony Zhao |
+| [Echo Zhou](https://github.com/Echo3516) |
+| Rita Chang |
 
 ## Engineering lessons
 
